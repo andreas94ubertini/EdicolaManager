@@ -117,13 +117,15 @@ namespace EdicolaManager.Classes
                 }
             }
         }
-        public void exportVendita()
+        public void exportVenditeGiornaliere()
         {
             string? path = Path.GetDirectoryName(typeof(Program).Assembly.Location);
             string pathDue = "C:\\Utenti\\ubert\\Desktop\\Vendite.txt>";
+            string fileName = "scontrini_";
+            string today = Convert.ToString(DateTime.Now.ToString("yyyy_MM_dd"));
             try
             {
-                using (StreamWriter sw = new StreamWriter(pathDue))
+                using (StreamWriter sw = new StreamWriter(path+"\\Vendite\\"+fileName+today+".txt"))
                 {
                     foreach(Vendita vendita in Vendite)
                     {

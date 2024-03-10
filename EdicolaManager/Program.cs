@@ -11,7 +11,7 @@ namespace EdicolaManager
             while (inserimento)
             {
                 Console.WriteLine("============================Edicola===================================");
-                Console.WriteLine("Premi 1 per gestire l'inventario, 2 per la gestione delle vendite, 3 per cercare tra le pubblicazioni, 4 per gestire gli abbonamenti, 9 per uscire");
+                Console.WriteLine("Premi 1 per gestire l'inventario, 2 per la gestione delle vendite, 3 per cercare tra le pubblicazioni, 4 per gestire gli abbonamenti, 5 per salvare le vendite giornaliere, 9 per uscire");
                 string? choice = Console.ReadLine();
                 try
                 {
@@ -270,6 +270,11 @@ namespace EdicolaManager
                                 {
                                     edi.mostraAbbonamenti();
                                 }
+                                break;
+                            }
+                        case 5:
+                            {
+                                edi.exportVenditeGiornaliere();
                                 break;
                             }
                         case 9:
